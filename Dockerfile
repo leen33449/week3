@@ -5,7 +5,7 @@ FROM python:3.11-alpine
 WORKDIR /app
 COPY requirements.txt ./
 # Install dependencies
-RUN pip install --no-cache-dir -r requirment.txt
+RUN pip install --no-cache-dir -r requirments.txt
 
 # Copy app source
 COPY . .
