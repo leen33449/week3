@@ -24,7 +24,7 @@ jobs:
         with:
           registry: ghcr.io
           username: ${{ github.actor }}
-          password: ${{ secrets.GITHUB_TOKEN }}
+          password: ${{ secrets.LEEN_TOKEN }}
 
       # 4. Build and push backend image
       - name: Build & Push Backend Image
