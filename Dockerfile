@@ -1,5 +1,5 @@
 # Use official Node.js LTS
-FROM python:3.11-slim
+FROM python:3.11-alpine
 
 # Create app directory
 WORKDIR /app
