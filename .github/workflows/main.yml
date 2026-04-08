@@ -34,14 +34,5 @@ jobs:
       - name: Deploy Docker Compose
         run: |
           cd /home/cybersecurity/Desktop/week3_repo
-
-          cat > .env <<EOF
-POSTGRES_PASSWORD=${{ secrets.POSTGRES_PASSWORD }}
-OPENROUTER_API_KEY=${{ secrets.OPENROUTER_API_KEY }}
-POSTGRES_DB=taskdb
-POSTGRES_USER=postgres
-POSTGRES_PORT=5432
-EOF
-
-          docker-compose pull
-          docker-compose up -d --remove-orphans
+          docker-compose down
+          docker-compose up -d
