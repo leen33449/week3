@@ -37,7 +37,7 @@ jobs:
           context: .
           file: ./templates/Dockerfile
           push: true
-          tags: ghcr.io/leen33449/week3-templates:lates
+          tags: ghcr.io/leen33449/week3-templates:latest
 
       - name: Deploy Docker Compose
         run: |
