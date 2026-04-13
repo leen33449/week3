@@ -31,6 +31,14 @@ jobs:
           push: true
           tags: ghcr.io/leen33449/week3:latest
 
+      - name: Build & Push Frontend Image
+        uses: docker/build-push-action@v5
+        with:
+          context: .
+          file: ./templates/Dockerfile
+          push: true
+          tags: ghcr.io/leen33449/week3-templates:lates
+
       - name: Deploy Docker Compose
         run: |
           cd /home/cybersecurity/Desktop/week3_repo
