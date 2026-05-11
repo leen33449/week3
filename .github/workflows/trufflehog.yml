@@ -1,0 +1,26 @@
+name: Secret Scan (TruffleHog)
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  scan:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout repo
+        uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
+
+      - name: Install TruffleHog
+        run: |
+          curl -L -o trufflehog.tar.gz https://github.com/trufflesecurity/trufflehog/releases/download/v3.95.2/trufflehog_3.95.2_linux_amd64.tar.gz
+          tar -xvzf trufflehog.tar.gz
+          chmod +x trufflehog
+          sudo mv trufflehog /usr/local/bin/
+
+      - name: Run scan
+        run: |
+          trufflehog git file://. --no-update --only-verified
