@@ -1,3 +1,15 @@
-.venv 
-.env
-__pycache__
+# system / CI junk
+actions-runner/
+_work/
+bin/
+__pycache__/
+*.pyc
+
+# secrets / sensitive
+vault/
+.credentials*
+.runner
+
+# OS / temp
+*.log
+*.db
